@@ -18,7 +18,7 @@ test_environment_details = {
 }
 
 browser = webdriver.Remote(
-	command_executor= ''%(username , access_key), 
+	command_executor= 'http://%s:%s@ondemand.saucelabs.com:80/wd/hub'%(username , access_key), 
 	desired_capabilities=test_environment_details
 	)
 
@@ -26,6 +26,8 @@ browser = webdriver.Remote(
 browser.get("https://www.google.com")
 search_input=browser.find_element_by_name("q")
 search_input.send_keys("github")
+search_input.submit()
 time.sleep(2)
+print(browser.title)
 browser.quit()
 
