@@ -14,7 +14,7 @@ test_environment_details = {
 	'platform' : "OS X 10.11" ,
 	'browsername' : "chrome" ,
 	'version' : "53.0" ,
-	'name' : "Testing the Slack Bot"
+	'name' : "seleniumtests.py"
 }
 
 browser = webdriver.Remote(
