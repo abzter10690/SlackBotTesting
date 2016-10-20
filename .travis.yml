@@ -13,5 +13,4 @@ python:
 #install: 
 
 # command to run tests
-script:
-	- python test.py
+script: python test.py
