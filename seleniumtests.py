@@ -6,9 +6,26 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
-username =  os.environ.get('SAUCE_USERNAME')
-access_key =  os.environ.get('SAUCE_ACCESS_KEY')
+username =  "abzter"
+access_key = "7150fcd6-f478-4b20-96fa-a405dc40e5ca"
 
-print(username)
-print(access_key)
+
+test_environment_details = {
+	'platform' : "OS X 10.11" ,
+	'browsername' : "chrome" ,
+	'version' : "53.0" ,
+	'name' : "Testing the Slack Bot"
+}
+
+browser = webdriver.Remote(
+	command_executor= ''%(username , access_key), 
+	desired_capabilities=test_environment_details
+	)
+
+#Test
+browser.get("https://www.google.com")
+search_input=browser.find_element_by_name("q")
+search_input.send_keys("github")
+time.sleep(2)
+browser.quit()
 
