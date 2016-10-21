@@ -7,8 +7,8 @@ install:
 
 # command to run tests
 script:
-  - python test.py
- # - python seleniumtests.py
+  #- python test.py
+  - python seleniumtests.py
 
 add_ons:
   sauce_connect: true
