@@ -82,12 +82,16 @@ msg = browser.find_element_by_xpath("//div[@id='msgs_div']/div[last()]/div[@clas
 
 message = msg.text
 print(message)
+
+browser.quit()
+
+'''
 parts = message.split(":")
 if parts[1].strip() == outputPassCommands[0]:
   unittest.assertEqual(outputPassCommands[0], parts[1].strip())
 else:
   unittest.assertEqual(outputFailCommands[0], parts[1].strip())    
-
+'''
 
 '''
 
